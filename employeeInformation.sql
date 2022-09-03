@@ -1,3 +1,5 @@
+
+
 DROP DATABASE IF EXISTS scott;
 
 CREATE DATABASE scott;
@@ -69,11 +71,6 @@ select EMPNO, ENAME from EMP;
 select JOB from Emp group by JOB;
 # select distinct job from emp;
 
-#5. 총 사원수를 구하시오.( hint : count)
-
-select ENAME, count(ENAME) from ENAME group by ENAME;
-
-
 #6. 부서번호가 10인 사원을 조회하시오.
 
 select ENAME, if(DEPTNO = 10, '10', 'none') from EMP;
@@ -90,10 +87,6 @@ select * from EMP where ENAME LIKE '%KING%';
 
 select EMPNO, ENAME from EMP where ENAME LIKE 'S%';
 
-#10. 사원 이름에 T가 포함된 사원의 사원번호와 이름을 조회하시오. (hint : like)
-
-select EMPNO, ENAME from EMP where ENANE LIKE '%T%';
-
 #11. 커미션이 300, 500, 1400 인 사원의 사번,이름,커미션을 조회하시오. (hint : OR, in )
 
 select EMPNO, ENAME, COMM from EMP where COMM = 300 or COMM = 500 or COMM = 1400;
@@ -107,3 +100,4 @@ select EMPNO, ENAME, SAL from EMP where SAL between 1200 and 3500;
 
 select ename, empno, job, deptno from emp where job = 'MANAGER' and deptno = 30;
 
+select ENAME from EMP where ENAME LIKE 'S%';
